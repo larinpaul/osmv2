@@ -14,6 +14,6 @@ func (h *handler) registerRoutes(nux *http.ServeMux) {
 	mux.HandleFunc("POST /api/customers/{customerID}/orders", h.HandleCreateOrder())
 }
 
-func (h *handler) HandleCreateOrder() {
+func (h *handler) HandleCreateOrder(w http.ResponseWriter, r *http.Request) {
 
 }

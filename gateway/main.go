@@ -4,5 +4,9 @@ import "net/http"
 
 func main() {
 	mux := http.NewServeMux()
-	mux.HandleFunc("POST /api/customers/{customerID}/orders", h)
-}
+	handler := NewHandler()
+	handler.registerRoutes(mux)
+
+	if err := http.ListenAndServe(httpAddr, mux); err != nil {
+		log Fatal("Failed to start http server")
+	}

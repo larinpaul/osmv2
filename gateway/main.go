@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	httpAddr = common.EnvString("HTTP_ADDR", ":8080")
+	httpAddr = common.EnvString("HTTP_ADDR", ":3000") 
 )
 
 func main() {

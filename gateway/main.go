@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 
+	_ "github.com/joho/gotoenv/autoload"
 	common "github.com/sikozonpc/commons"
 )
 

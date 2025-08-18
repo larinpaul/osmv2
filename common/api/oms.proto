@@ -7,3 +7,9 @@ package api;
 service OrderService {
     rpc CreateOrder() return ();
 }
+
+message CreateOrderRequest {
+    sring customerID = 1;
+    repeated ItemsWithQuantity Items = 2;
+}
+

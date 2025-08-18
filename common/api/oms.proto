@@ -2,3 +2,8 @@ syntax = "proto3";
 
 option go_package = "github.com/sikozonpc/commons/api";
 
+package api;
+
+service OrderService {
+    rpc CreateOrder() return ();
+}

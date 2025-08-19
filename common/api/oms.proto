@@ -5,7 +5,7 @@ option go_package = "github.com/sikozonpc/commons/api";
 package api;
 
 service OrderService {
-    rpc CreateOrder() return ();
+    rpc CreateOrder(CreateOrderRequest) return ();
 }
 
 message CreateOrderRequest {

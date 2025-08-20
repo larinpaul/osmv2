@@ -17,8 +17,9 @@ service OrderService {
 
 message Item {
     string ID = 1;
-    int32 Quantity = 2;
-    string PriceID = 3;
+    string Name = 2;
+    int32 Quantity = 3;
+    string PriceID = 4;
 }
 
 message CreateOrderRequest {

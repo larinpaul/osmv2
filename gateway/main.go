@@ -14,7 +14,7 @@ const (
 )
 
 func main() {
-	conn, err := grpc.Dial(orderServiceAddr, )
+	conn, err := grpc.Dial(orderServiceAddr, grpc.WithTransportCredentials(insecure.NewCredentials()))
 
 	mux := http.NewServeMux()
 	handler := NewHandler()

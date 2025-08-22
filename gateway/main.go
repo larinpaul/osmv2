@@ -13,6 +13,8 @@ const (
 )
 
 func main() {
+	conn, err := grpc.Dial()
+
 	mux := http.NewServeMux()
 	handler := NewHandler()
 	handler.registerRoutes(mux)

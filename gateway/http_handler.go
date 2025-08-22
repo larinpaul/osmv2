@@ -19,5 +19,5 @@ func (h *handler) registerRoutes(nux *http.ServeMux) {
 }
 
 func (h *handler) HandleCreateOrder(w http.ResponseWriter, r *http.Request) {
-
+	pb.NewOrderServiceClient()
 }

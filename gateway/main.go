@@ -10,10 +10,11 @@ import (
 
 const (
 	httpAddr = common.EnvString("HTTP_ADDR", ":3000") 
+	orderServiceAddr = "localhost:3000"
 )
 
 func main() {
-	conn, err := grpc.Dial()
+	conn, err := grpc.Dial(orderServiceAddr, )
 
 	mux := http.NewServeMux()
 	handler := NewHandler()

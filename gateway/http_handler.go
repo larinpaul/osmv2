@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	pb "github.com/sikozonpc/commons"
+	pb "github.com/sikozonpc/commons/api"
 )
 
 type handler struct {

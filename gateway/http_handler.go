@@ -2,8 +2,6 @@ package main
 
 import (
 	"net/http"
-
-	pb "github.com/sikozonpc/commons/api"
 )
 
 type handler struct {
@@ -19,5 +17,5 @@ func (h *handler) registerRoutes(nux *http.ServeMux) {
 }
 
 func (h *handler) HandleCreateOrder(w http.ResponseWriter, r *http.Request) {
-	pb.NewOrderServiceClient()
+
 }

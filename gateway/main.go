@@ -22,6 +22,8 @@ func main() {
 
 	log.Println("Dialing orders service at ", ordersServiceAddr)
 
+	c := pb.NewOrderServiceClient()
+
 	mux := http.NewServeMux()
 	handler := NewHandler()
 	handler.registerRoutes(mux)

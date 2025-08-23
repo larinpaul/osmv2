@@ -15,6 +15,12 @@ const (
 
 func main() {
 	conn, err := grpc.Dial(orderServiceAddr, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	if err != nil {
+		log.Fatalf("Failed to dial server: %v", err)
+	}
+	defer conn.Close()
+
+	log.Println("Dialing orders service at ", ordersServiceAddr)
 
 	mux := http.NewServeMux()
 	handler := NewHandler()

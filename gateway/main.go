@@ -25,10 +25,10 @@ func main() {
 
 	log.Println("Dialing orders service at ", ordersServiceAddr)
 
-	c := pb.NewOrderServiceClient()
+	c := pb.NewOrderServiceClient(conn)
 
 	mux := http.NewServeMux()
-	handler := NewHandler()
+	handler := NewHandler(c)
 	handler.registerRoutes(mux)
 
 	log.Printf("Starting HTTP server at %s", httpAddr)

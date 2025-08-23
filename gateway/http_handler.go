@@ -5,11 +5,11 @@ import (
 )
 
 type handler struct {
-	// gateway
+	client pb.OrderServiceClient
 }
 
-func NewHandler() *handler {
-	return &handler{}
+func NewHandler(client pb.OrderServiceClient) *handler {
+	return &handler{client}
 }
 
 func (h *handler) registerRoutes(nux *http.ServeMux) {

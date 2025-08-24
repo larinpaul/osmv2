@@ -17,5 +17,10 @@ func (h *handler) registerRoutes(nux *http.ServeMux) {
 }
 
 func (h *handler) HandleCreateOrder(w http.ResponseWriter, r *http.Request) {
+	customerID := r.PathValue("customerID")
 
+	h.client.CreateOrder(r.Context(), &pb.CreateOrderRequest{
+		customerID: customerID,
+		Items:      items,
+	})
 }

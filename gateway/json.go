@@ -13,5 +13,4 @@ func WriteJSON(w http.ResponseWriter, status int, data any) {
 
 func ReadJSON(r *http.Request, data any) error {
 	return json.NewDecoder(r.Body).Decode(data)
-
 }

@@ -1,8 +1,14 @@
 package main
 
-import "context"
+import (
+	"context"
+
+	"google.go.golang.org/grpc"
+)
 
 func main() {
+
+	grpcServer := grpc.NewServer()
 
 	store := NewStore()
 	svc := NewService(store)

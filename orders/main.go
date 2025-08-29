@@ -8,6 +8,10 @@ import (
 	"google.go.golang.org/grpc"
 )
 
+var (
+	grpcAddr = common.EnvString("GRCP_ADDR", "localhost:2000")
+)
+
 func main() {
 
 	grpcServer := grpc.NewServer()

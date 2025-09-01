@@ -20,6 +20,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
+	defer f.Close()
 
 	store := NewStore()
 	svc := NewService(store)

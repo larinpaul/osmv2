@@ -4,8 +4,6 @@ import (
 	"context"
 	"log"
 	"net"
-
-	"google.go.golang.org/grpc"
 )
 
 var (
@@ -13,8 +11,6 @@ var (
 )
 
 func main() {
-
-	grpcServer := grpc.NewServer()
 
 	l, err := net.Listen("tcp", grpcAddr)
 	if err != nil {

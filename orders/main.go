@@ -27,7 +27,7 @@ func main() {
 
 	svc.CreateOrder(context.Background())
 
-	if err := grpcServer.Serve(); err != nil {
+	if err := grpcServer.Serve(l); err != nil {
 		log.Fatal(err.Error())
 	}
 }

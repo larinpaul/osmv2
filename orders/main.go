@@ -17,6 +17,9 @@ func main() {
 	grpcServer := grpc.NewServer()
 
 	l, err := net.Dial("tcp", grpcAddr)
+	if err != nil {
+		log.Fatalf("failed to listen: %v", err)
+	}
 
 	store := NewStore()
 	svc := NewService(store)

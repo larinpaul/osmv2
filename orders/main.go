@@ -16,7 +16,7 @@ func main() {
 
 	grpcServer := grpc.NewServer()
 
-	l, err := net.Dial("tcp", grpcAddr)
+	l, err := net.Listen("tcp", grpcAddr)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}

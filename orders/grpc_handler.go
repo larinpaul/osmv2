@@ -11,6 +11,10 @@ type grpcHandler struct {
 	pb.UnimplementedOrderServiceServer
 }
 
+func NewGRPCHandler() *grpcHandler {
+	return &grpcHandler{}
+}
+
 func (h *grpcHandler) CreateOrder(context.Context, *pb.CreteOrderRequest) (*pb.Order, error) {
 	log.Println("New order received!")
 	o := &pb.Order{

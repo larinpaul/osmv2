@@ -11,8 +11,8 @@ type grpcHandler struct {
 	pb.UnimplementedOrderServiceServer
 }
 
-func NewGRPCHandler() *grpcHandler {
-	return &grpcHandler{}
+func NewGRPCHandler(grpcServer) *grpcHandler {
+	return &grpcHandler{grpcServer}
 }
 
 func (h *grpcHandler) CreateOrder(context.Context, *pb.CreteOrderRequest) (*pb.Order, error) {

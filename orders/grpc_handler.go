@@ -11,7 +11,7 @@ type grpcHandler struct {
 	pb.UnimplementedOrderServiceServer
 }
 
-func NewGRPCHandler(grpcServer) *grpcHandler {
+func NewGRPCHandler(grpcServer *grpc.Server) *grpcHandler {
 	return &grpcHandler{grpcServer}
 }
 

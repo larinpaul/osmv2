@@ -12,7 +12,9 @@ type grpcHandler struct {
 }
 
 func NewGRPCHandler(grpcServer *grpc.Server) *grpcHandler {
-	return &grpcHandler{grpcServer}
+	handler := &grpcHandler{}
+
+	pb.NewOrderServiceClient{grpcServer, handler}
 }
 
 func (h *grpcHandler) CreateOrder(context.Context, *pb.CreteOrderRequest) (*pb.Order, error) {

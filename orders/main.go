@@ -24,6 +24,8 @@ func main() {
 
 	svc.CreateOrder(context.Background())
 
+	log.Println("GRPC Server Started at ", grpcAddr)
+
 	if err := grpcServer.Serve(l); err != nil {
 		log.Fatal(err.Error())
 	}

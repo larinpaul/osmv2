@@ -25,6 +25,8 @@ func (h *handler) HandleCreateOrder(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	err := validateItems(items)
+
 	h.client.CreateOrder(r.Context(), &pb.CreateOrderRequest{
 		customerID: customerID,
 		Items:      items,

@@ -44,8 +44,9 @@ func validateItems(items []*pb.ItemsWithQuality) error {
 			return errors.New("item ID is required")
 		}
 
-		
+		if i.Quantity <= 0 {
+			return errors.New("items must have a valid quantity")
+		}
 	}
-
 	return nil
 }

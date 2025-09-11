@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"net/http"
 )
 
@@ -31,4 +32,11 @@ func (h *handler) HandleCreateOrder(w http.ResponseWriter, r *http.Request) {
 		customerID: customerID,
 		Items:      items,
 	})
+}
+
+func validateItems(items []*pb.ItemsWithQuality) error {
+	if len(items) == 0 {
+		return errors.New("items must have at least one items")
+	}
+
 }

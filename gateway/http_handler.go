@@ -39,4 +39,13 @@ func validateItems(items []*pb.ItemsWithQuality) error {
 		return errors.New("items must have at least one items")
 	}
 
+	for _ i := range items {
+		if i.ID == "" {
+			return errors.New("item ID is required")
+		}
+
+		
+	}
+
+	return nil
 }

@@ -27,7 +27,8 @@ func (h *handler) HandleCreateOrder(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := validateItems(items); err != nil {
-		
+		common.WriteError(w, http.StatusBadRequest, err.Error())
+		return
 	}
 
 	h.client.CreateOrder(r.Context(), &pb.CreateOrderRequest{

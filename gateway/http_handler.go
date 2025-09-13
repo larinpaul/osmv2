@@ -31,7 +31,7 @@ func (h *handler) HandleCreateOrder(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	h.client.CreateOrder(r.Context(), &pb.CreateOrderRequest{
+	o, err := h.client.CreateOrder(r.Context(), &pb.CreateOrderRequest{
 		customerID: customerID,
 		Items:      items,
 	})

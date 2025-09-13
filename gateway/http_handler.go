@@ -36,7 +36,7 @@ func (h *handler) HandleCreateOrder(w http.ResponseWriter, r *http.Request) {
 		Items:      items,
 	})
 
-	common.ReadJSON()
+	common.ReadJSON(w, http.StatusOK, )
 }
 
 func validateItems(items []*pb.ItemsWithQuality) error {

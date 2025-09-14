@@ -35,6 +35,10 @@ func (h *handler) HandleCreateOrder(w http.ResponseWriter, r *http.Request) {
 		customerID: customerID,
 		Items:      items,
 	})
+	if err != nil {
+		common.WriteError(w, http.StatusInternalServerError, err.Error())
+		return
+	}
 
 	common.WriteJSON(w, http.StatusOK, o)
 }

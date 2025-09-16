@@ -35,6 +35,7 @@ func (h *handler) HandleCreateOrder(w http.ResponseWriter, r *http.Request) {
 		customerID: customerID,
 		Items:      items,
 	})
+	rStatus := status.Convert(err)
 	if err != nil {
 		common.WriteError(w, http.StatusInternalServerError, err.Error())
 		return

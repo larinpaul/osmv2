@@ -36,7 +36,12 @@ func (h *handler) HandleCreateOrder(w http.ResponseWriter, r *http.Request) {
 		Items:      items,
 	})
 	rStatus := status.Convert(err)
-	if err != nil {
+	if rStatus != nil {
+		if rStatus.Code() != codes.InvalidArgument {
+			common.WriteError(w, http.StatusBadRequest, rStatus.Message())
+			return
+		}
+
 		common.WriteError(w, http.StatusInternalServerError, err.Error())
 		return
 	}

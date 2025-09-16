@@ -1,0 +1,7 @@
+Status: 500 Internal Server Error   Size: 61 Bytes      Time: 4 ms
+
+{
+    "error": "rpc error: code = Unknown desc = some errors !!!"
+}
+
+

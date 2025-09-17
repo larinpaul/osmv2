@@ -5,6 +5,7 @@ import (
 	"log"
 
 	pb "github.com/sikozonpc/commons/api"
+	"google.golang.org/grpc"
 )
 
 type grpcHandler struct {

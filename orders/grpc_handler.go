@@ -10,6 +10,8 @@ import (
 
 type grpcHandler struct {
 	pb.UnimplementedOrderServiceServer
+
+	service OrdersService
 }
 
 func NewGRPCHandler(grpcServer *grpc.Server) *grpcHandler {

@@ -34,7 +34,7 @@ func (h *handler) HandleCreateOrder(w http.ResponseWriter, r *http.Request) {
 	o, err := h.client.CreateOrder(r.Context(), &pb.CreateOrderRequest{
 		customerID: customerID,
 		Items:      items,
-	})
+	})  
 	rStatus := status.Convert(err)
 	if rStatus != nil {
 		if rStatus.Code() != codes.InvalidArgument {

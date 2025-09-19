@@ -14,7 +14,7 @@ type grpcHandler struct {
 	service OrdersService
 }
 
-func NewGRPCHandler(grpcServer *grpc.Server) *grpcHandler {
+func NewGRPCHandler(grpcServer *grpc.Server, service OrdersService) {
 	handler := &grpcHandler{}
 	pb.RegisterOrderServiceServer{grpcServer, handler}
 }

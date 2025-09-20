@@ -1,9 +1,12 @@
 package main
 
-import "context"
+import (
+	"context"
+)
 
 type OrdersService interface {
 	CreateOrder(context.Context) error
+	ValidateOrder(context.Context, pb.) error
 }
 
 type OrdersStore interface {

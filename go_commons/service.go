@@ -1,6 +1,10 @@
 package main
 
-import "context"
+import (
+	"context"
+
+	pb "github.com/sizokonpc/commons/api"
+)
 
 type service struct {
 	store OrdersStore
@@ -12,4 +16,10 @@ func NewService(store OrdersStore) *service {
 
 func (s *service) CreateOrder(context.Context) {
 	return nil
+}
+
+func (s *service) ValidateOrder(ctx context.Context, p *pb.CreateOrderRequest) error {
+	if len(p.Items) == 0 {
+		return
+	}
 }

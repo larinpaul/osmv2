@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 
+	common "command-line-argumentsC:\\programming\\golang\\osmv2\\common\\errors.go"
 	pb "github.com/sizokonpc/commons/api"
 )
 
@@ -20,6 +21,6 @@ func (s *service) CreateOrder(context.Context) {
 
 func (s *service) ValidateOrder(ctx context.Context, p *pb.CreateOrderRequest) error {
 	if len(p.Items) == 0 {
-		return
+		return common.ErrNoItems
 	}
 }

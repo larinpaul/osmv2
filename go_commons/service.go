@@ -24,3 +24,7 @@ func (s *service) ValidateOrder(ctx context.Context, p *pb.CreateOrderRequest) e
 		return common.ErrNoItems
 	}
 }
+
+func mergeItemsQuantities(items []*pb.ItemsWithQuantity) []*pb.ItemsWithQuantity {
+
+}

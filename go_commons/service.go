@@ -23,6 +23,8 @@ func (s *service) ValidateOrder(ctx context.Context, p *pb.CreateOrderRequest) e
 	if len(p.Items) == 0 {
 		return common.ErrNoItems
 	}
+
+	mergedItems := mergeItemsQuantities(p.Items)
 }
 
 func mergeItemsQuantities(items []*pb.ItemsWithQuantity) []*pb.ItemsWithQuantity {

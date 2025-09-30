@@ -28,5 +28,11 @@ func (s *service) ValidateOrder(ctx context.Context, p *pb.CreateOrderRequest) e
 }
 
 func mergeItemsQuantities(items []*pb.ItemsWithQuantity) []*pb.ItemsWithQuantity {
+	merged := make([]*pb.ItemsWithQuantity, 0)
 
+	for _, item := range items {
+
+	}
+
+	return merged
 }
